@@ -1,0 +1,161 @@
+Test Case ID,Objective,Pre-condition,Steps,Expected Results,Comments,Tests Results,Automated
+TC1,Create a new computer in the database,"1. Open the herokuapp main page.
+","1. I click add new computer button
+2. I fill computer name as ""test-computer-1""
+3. I fill the introduced date with ""2018-08-12""
+4. I fill the discontinued date with ""2018-08-12""
+5. I choose the company ""Xerox""
+6. I click create this computer button","1. I should see a message with ""Done! Computer test-computer-1 has been created""",,PASS,Yes
+TC2,Create a computer only with the title,"1. Open the herokuapp main page.
+","1. I click add new computer button
+2. I fill computer name as ""test-computer-2""
+3. I click create this computer button","1. I should see a message with ""Done! Computer test-computer-2 has been created""",,PASS,Yes
+TC3,Verify that the computer name is a mandatory field,"1. Open the herokuapp main page.
+","1. I click add new computer button
+2. I click create this computer button",1. I should see a warning error indicating that the computer name field is mandatory.,,PASS,Yes
+TC4,Verify that a wrong introduced date should show an error,"1. Open the herokuapp main page.
+","1. I click add new computer button
+2. I fill computer name as ""test-computer-3""
+3. I fill the introduced date with ""2015-00-00""
+4. I click create this computer button",1. I should see a warning error indicating that introduced date field has an incorrect format.,,PASS,Yes
+TC5,Verify that an invalid format of introduced date should show an error,"1. Open the herokuapp main page.
+","1. I click add new computer button
+2. I fill computer name as ""test-computer-3""
+3. I fill the introduced date with ""12-08-2018""
+4. I click create this computer button",1. I should see a warning error indicating that introduced date field has an incorrect format.,,PASS,Yes
+TC6,Verify that a wrong discontinued date should show an error,"1. Open the herokuapp main page.
+","1. I click add new computer button
+2. I fill computer name as ""test-computer-4""
+3. I fill the discontinued date with ""2015-00-00""
+4. I click create this computer button",1. I should see a warning error indicating that discontinued date field has an incorrect format.,,PASS,Yes
+TC7,Verify that an invalid format of discontinued date should show an error,"1. Open the herokuapp main page.
+","1. I click add new computer button
+2. I fill computer name as ""test-computer-4""
+3. I fill the discontinued date with ""12-08-2018""
+4. I click create this computer button",1. I should see a warning error indicating that discontinued date field has an incorrect format.,,PASS,Yes
+TC8,Read a computer from database,"1. Open the herokuapp main page.
+2. The computer ""test-computer-5"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-5"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-5""","1. I should see company field with ""Apple Inc."", introduced date with ""2018-08-11"" and discontinued date with ""2018-09-11"".",,PASS,Yes
+TC9,Update a computer from the database,"1. Open the herokuapp main page.
+2. The computer ""test-computer-6"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-6"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-6""
+4. I fill the introduced date with ""2018-09-10""
+5. I click save this computer","1. I should see a message with ""Done! Computer test-computer-6 has been updated"".",,PASS,Yes
+TC10,Update a computer from the database and validates its fields,"1. Open the herokuapp main page.
+2. The computer ""test-computer-7"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-7"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-7""
+4. I fill the introduced date with ""2018-09-10""
+5. I click save this computer
+6. I fill the filter field with ""test-computer-7"".
+7. I click filter by name button
+8. When the result list appears, I open the computer view for the computer ""test-computer-7""","1. I should see the attribute introduced date with ""2018-09-10""",,PASS,Yes
+TC11,Verify that a wrong introduced date should show an error when updating a computer.,"1. Open the herokuapp main page.
+2. The computer ""test-computer-8"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-8"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-8""
+4. I fill the introduced date with ""2018-13-10""
+5. I click save this computer",1. I should see a warning error indicating that introduced date field has an incorrect format.,,PASS,Yes
+TC12,Verify that an invalid format of introduced date should show an error when updating a computer.,"1. Open the herokuapp main page.
+2. The computer ""test-computer-8"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-8"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-8""
+4. I fill the introduced date with ""12-08-2018""
+5. I click save this computer",1. I should see a warning error indicating that introduced date field has an incorrect format.,,PASS,Yes
+TC13,Verify that a wrong discontinued date should show an error when updating a computer.,"1. Open the herokuapp main page.
+2. Wait computers list gets loaded.
+3. The computer ""test-computer-9"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-9"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-9""
+4. I fill the discontinued date with ""2018-11-34""
+5. I click save this computer",1. I should see a warning error indicating that discontinued date field has an incorrect format.,,PASS,Yes
+TC14,Verify that an invalid format of discontinued date should show an error when updating a computer.,"1. Open the herokuapp main page.
+2. The computer ""test-computer-9"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-9"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-9""
+4. I fill the discontinued date with ""12-08-2018""
+5. I click save this computer",1. I should see a warning error indicating that discontinued date field has an incorrect format.,,PASS,Yes
+TC15,Delete a computer from the database,"1. Open the herokuapp main page.
+2. The computer ""test-computer-10"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-10"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-10""
+4. I click delete this computer
+","1. I should see a message with ""Done! Computer has been deleted""",,PASS,Yes
+TC16,Deleted computer is not listed in the main page,"1. Open the herokuapp main page.
+2. The computer ""test-computer-11"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-11"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-11""
+3. I click delete this computer
+4 .I look for the computer ""test-computer-11""
+","1. I should see the following message ""Nothing to display""",,PASS,Yes
+TC17,Edit computer view shows the delete button,"1. Open the herokuapp main page.
+2. The computer ""test-computer-12"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-12"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-12""
+",1. I should see the delete button present,,PASS,Yes
+TC18,Verify that discontinued date should be later than introduced date when creating a new computer.,1. Open the herokuapp main page.,"1. I click add new computer button
+2. I fill computer name as ""test-computer-13""
+3. I fill the introduced date with ""2018-08-12""
+4. I fill the discontinued date with ""2018-07-12""
+5. I choose the company ""Xerox""
+6. I click create this computer button",1. I should see a warning error indicating that the range of dates is incorrect.,"This use case isn't contemplated, but I consider this validation is necessary.",FAIL,No
+TC19,Verify that discontinued date should be later than introduced date when updating a computer.,"1. Open the herokuapp main page.
+2. The computer ""test-computer-14"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-14"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-14""
+4. I fill the introduced date with ""2018-08-12""
+5. I fill the discontinued date with ""2018-07-12""
+6. I click save this computer",1. I should see a warning error indicating that the range of dates is incorrect.,"This use case isn't contemplated, but I consider this validation is necessary.",FAIL,No
+TC20,Verify that the computer wasn't created when creation is aborted.,"1. Open the herokuapp main page.
+","1. I click add new computer button
+2. I fill computer name as ""test-computer-15""
+3. I fill the introduced date with ""2018-08-12""
+4. I fill the discontinued date with ""2018-08-12""
+5. I choose the company ""Xerox""
+6. I click cancel button","1. I shouldn't see a message with ""Done! Computer test-computer-15 has been created""
+2. I shoun't see the new computer created.",,PASS,No
+TC21,Verify that the computer wasn't updated when update is aborted.,"1. Open the herokuapp main page.
+2. The computer ""test-computer-16"" should exist and contain the following information: 
+- introduced date should be ""2018-08-11""
+- discontinued date should be ""2018-09-11""
+- selected company should be ""Apple Inc.""","1. I fill the filter field with ""test-computer-16"".
+2. I click filter by name button
+3. When the result list appears, I open the computer view for the computer ""test-computer-16""
+4. I fill the introduced date with ""2018-08-12""
+5. I click cancel button","1. I shouldn't see a message with ""Done! Computer test-computer-16 has been updated"".
+2. I shoun't see the introduced date modificated with the new value.",,PASS,No

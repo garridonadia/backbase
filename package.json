@@ -1,0 +1,34 @@
+{
+  "name": "Backbase",
+  "version": "1.0.0",
+  "description": "Backbase",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/nightwatch",
+    "test-report":"node generateHTMLReport.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "e2e",
+    "testing"
+  ],
+  "author": "Nadia Garrido",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "chromedriver": "2.41.0",
+    "cucumber": "2.0.0-rc.9",
+    "cucumber-html-reporter": "^4.0.3",
+    "minimist": "^1.2.0",
+    "nightwatch": "0.9.12",
+    "nightwatch-cucumber": "7.0.7",
+    "selenium-server": "2.53.1",
+    "selenium-webdriver": "^2.53.0"
+  }
+}
